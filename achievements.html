@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنجازات طلابنا | مدارس المتنبي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/Logo.png" type="image/x-icon">
+    <meta name="description" content="نتائج الصفوف المنتهية في مدارس المتنبي الأهلية النموذجية - السادس الابتدائي، الثالث المتوسط، والسادس الإعدادي. عرض تفصيلي للمعدلات والإنجازات العلمية للسنوات الدراسية المختلفة.">
+    <meta name="keywords" content="
+        نتائج طلاب المتنبي,
+        نتائج السادس العلمي المتنبي,
+        نتائج الثالث المتوسط المتنبي,
+        نتائج السادس الابتدائي المتنبي,
+        معدلات الطلاب,
+        نتائج الامتحانات مدارس المتنبي,
+        طلاب المتنبي المتفوقين,
+        النتائج الدراسية المتنبي,
+        موقع نتائج المتنبي,
+        نتائج الامتحانات 2024,
+        نتائج المتفوقين في المتنبي,
+        مدارس المتنبي نتائج,
+        student results Almutanabbi,
+        Almutanabbi school grades,
+        Almutanabbi excellence list,
+        academic results Basra,
+        top students Iraq,
+        best grades Mutanabbi,
+        exam results Mutanabbi,
+        Mutanabbi school achievements,
+        Mutanabbi honor board,
+        نتائج المتنبي الأهلية 2024,
+        إنجازات طلاب المتنبي
+    ">
+    <style>
+        
+        
+
+        /* عند عرض الصفحة على شاشة أصغر من 768px */
+
+        .achievements-header {
+            background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)), url('images/achievements-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .achievements-filter {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-group select, .filter-group input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 200px;
+        }
+        
+        .achievements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .achievements-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: right;
+        }
+        
+        .achievements-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .achievements-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .achievements-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .achievement-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .badge-gold {
+            background-color: #FFD700;
+            color: #8B7500;
+        }
+        
+        .badge-silver {
+            background-color: #C0C0C0;
+            color: #696969;
+        }
+        
+        .badge-bronze {
+            background-color: #CD7F32;
+            color: #5D3A1A;
+        }
+        
+        .badge-honor {
+            background-color: #2E8B57;
+            color: white;
+        }
+        
+        .academic-year-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .year-tab {
+            padding: 10px 20px;
+            background-color: #eee;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .year-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .achievement-cards {
+            display: none;
+        }
+        
+        @media (max-width: 1099px) {
+            .academic-year-tabs{
+                display: block;
+                
+            }
+            .academic-year-tabs div {
+                display: flex;
+                justify-content: center;
+            }
+            .achievement-card {
+                background-color: white;
+                border-radius: 8px;
+                padding: 15px;
+                margin-bottom: 15px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            }
+            body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            table {
+            border: none;
+            width: 100%;
+          }
+      
+          thead {
+            display: none; /* إخفاء رؤوس الأعمدة */
+          }
+      
+          tbody tr {
+            display: block;
+            margin: 10px 0;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+          }
+      
+          tbody td {
+            display: block;
+            text-align: right;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+          }
+      
+          tbody td:last-child {
+            border-bottom: none;
+          }
+        }   
+        
+        
+       
+
+    </style>
+</head>
+<body>
+    <!-- القائمة الرئيسية -->
+    
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">مدارس المتنبي</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">الرئيسية</a></li>
+                <li><a href="index.html#about">عن المدرسة</a></li>
+                <li><a href="index.html#programs">برامجنا</a></li>
+                <li><a href="index.html#admissions">القبول والتسجيل</a></li>
+                <li><a href="achievements.html" class="active">إنجازات طلبتنا</a></li>
+                <li><a href="about.html">عن المطور</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="toggle-btn" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- محتوى صفحة الإنجازات -->
+    <main>
+        <section class="achievements-header">
+            <div class="container">
+                <h1>إنجازات طلبتنا</h1>
+                <p>تفوق طلابنا هو شعارنا وهدفنا</p>
+            </div>
+        </section>
+        <section class="achievements-section">
+            <div class="container">
+                <div class="achievements-filter">
+                    
+                    <div class="filter-group">
+                        <select id="year-filter">
+                            <option value="all">جميع السنوات</option>
+                            <option value="2024">2023-2024</option>
+                            <option value="2023">2022-2023</option>
+                            <option value="2022">2021-2022</option>
+                            <option value="2021">2020-2021</option>
+                            <option value="2020">2019-2020</option>
+                            <option value="2019">2018-2019</option>
+                        </select>
+                        <select id="grade-filter">
+                            <option value="all">جميع الصفوف</option>
+                            <option value="grade12">الصف السادس العلمي</option>
+                            <option value="grade9">الصف الثالث المتوسط</option>
+                            <option value="grade6">الصف السادس الابتدائي</option>
+                        </select>
+                        
+                        <select id="achievement-filter">
+                            <option value="all">جميع الإنجازات</option>
+                            <option value="excellence">تميز علمي</option>
+                            <option value="olympiad">أولمبياد علمي</option>
+                            <option value="sports">إنجازات رياضية</option>
+                            <option value="arts">إنجازات فنية</option>
+                        </select>
+                        
+                        <input type="text" id="search-input" placeholder="ابحث عن طالب...">
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="achievements-table">
+                        <thead>
+                            <tr>
+                                <th>اسم الطالب</th>
+                                <th>الصف</th>
+                                <th>السنة الأكاديمية</th>
+                                <th>المعدل</th>
+                                <th></th>
+                                <th>الإنجاز</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--السادس الابتدائي-->
+                            <!--2023-2024-->
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>حسين ضياء سالم جعفر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>96.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 96.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>حسين عواد عبد الرضا لفته</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>89.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.67% في السادس الابتدائي</td>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>حسين مايكل عيسى عبد الله</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>91.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 91.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>حميد نعمه حميد درويش</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>94.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 94.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>عباس وميض كاظم احمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>90%</td>
+                                <td></td>
+                                <td>حصل على معدل 90% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>عبد الرحمن اياد عبد الرحمن جابر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>88.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>عبد الله احمد طعمه محمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>89.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>عبد الله فاروق عمر عبد الوهاب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>96.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 96.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>عبد الله يحيى صبيح عبود</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>99.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 99.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>علي عباس فاضل سويد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>98.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 98.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>علي منتصر اياد اسماعيل</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>93.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد احمد فرهود عبود</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>89.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>مرتضى هيثم داخل علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>90.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>مصطفى عماد علي محمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>90.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>أفنان مصطفى كمال عبد الله</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>98.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>ايناس حسين عبد الامير ادريس</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>87.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>بتول مصطفى مؤيد نعيم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>90.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>رقية فؤاد عبد الكريم حميد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>90%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>رقية مرتضى سلمان محمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>92.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>رهام غيث محمد عبد الرزاق</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>99.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 99.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>سرى تحسين علي فرحان</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>90.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة احمد داود سلمان</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>96.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة جاسم كريم ناهي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>97.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة محمد حميد عبد الله</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>98.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة مصطفى مؤيد نعيم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>87.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>فرح نعمة حميد درويش</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>93.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>كوثر حيدر علي مسلم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>92.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>مريم نجم عبد الله عبد الكريم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>91.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>نرجس حامد عبد العالي رخيص</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>88.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade6" data-achievement="excellence">
+                                <td>هاجر مسلم كريم ناهي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2023-2024</td>
+                                <td>95.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.33% في السادس الابتدائي</td>
+                            </tr>
+                            <!--2022-2023-->
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>احمد حيدر محمد علي بعنون</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>95.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 95.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>احمد كاظم هثل عبد الله</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>92.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 92.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>حيدر مايكل عيسى عبد الله</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>89.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>رضا منتظر باهض حسن</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>89.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>عباس حيدر مجيد حمادي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>97.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 97.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>علي حسين شاكر قاسم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>94%</td>
+                                <td></td>
+                                <td>حصل على معدل 94% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>علي فراس هاشم عبد علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>91.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 91.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد فؤاد مجيد عيسى</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>90.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>مرتضى رياض مولى حميد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>94.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 94.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>منتظر حامد سامي شبيب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>87%</td>
+                                <td></td>
+                                <td>حصل على معدل 87% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>ياسين بيجاد ابراهيم أسماعيل</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>88.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>ازهار سمير راضي علوان</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>90.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>جنات فراس نعمة عبد الرضا</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>96.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>حوراء كرار رعد صباح</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>91.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>حوراء نورس نعمة عبد الرضا</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>94.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>رقية عبد الله جبار غضيب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>86.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>زهراء عباس حسن حمود</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>88.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>زهراء منذر عبد الله عذير</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>86.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>سارة حسين محسن كاظم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>86.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>عدن فاروق عمر عبد الوهاب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>97.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة احمد عبد الواحد حيدر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>95.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة حيدر ناجي عبد الحسن</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>86.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة عبد محمد عايد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>96.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade6" data-achievement="excellence">
+                                <td>نور الزهراء صلاح عبد الاله عزيز</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2022-2023</td>
+                                <td>96.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.83% في السادس الابتدائي</td>
+                            </tr>
+                            <!--2021-2022-->
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>اشرف علي عزيز لازم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>92.4%</td>
+                                <td></td>
+                                <td>حصل على معدل 92.4% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>بسام بكر عبد الرزاق محمود</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>89.6%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.6% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>جعفر ميثم سلمان موسى</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>94.2%</td>
+                                <td></td>
+                                <td>حصل على معدل 94.2% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>حسين علي عبد الرضا حسين</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>88.6%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.6% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>سالم محمد سالم جعفر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>95%</td>
+                                <td></td>
+                                <td>حصل على معدل 95% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>عبد الله حيدر محمد طاهر رجب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>93%</td>
+                                <td></td>
+                                <td>حصل على معدل 93% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>عبد الله كاظم حبيب نوري</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>88%</td>
+                                <td></td>
+                                <td>حصل على معدل 88% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>علي احمد خير الله سالم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>87%</td>
+                                <td></td>
+                                <td>حصل على معدل 87% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>علي مرتضى سلمان محمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>92.2%</td>
+                                <td></td>
+                                <td>حصل على معدل 92.2% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>علي يحيى صبيح عبود</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>98.2%</td>
+                                <td></td>
+                                <td>حصل على معدل 98.2% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد هاني مكطوف ناصر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>87%</td>
+                                <td></td>
+                                <td>حصل على معدل 87% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد وسام غزي فزع</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>88.4%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.4% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>مصطفى رياض مولى حميد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>99.6%</td>
+                                <td></td>
+                                <td>حصل على معدل 99.6% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>نور الدين صالح عبد الحسين مزعل</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>89.8%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.8% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>ايلاف حيدر علوان عبد العباس</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>88.6%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.6% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>بنين عقيل عبد محمد عباس</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>90.2%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.2% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>تبارك حسين شاكر قاسم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>98.8%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.8% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>حوراء كرار شاكر جبار</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>87.4%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.4% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>رؤى وسام جواد صلال</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>94%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>رقية ابراهيم احمد ابراهيم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>97.4%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.4% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>رقية ايلاف احمد محمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>88.6%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.6% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>رماس قاسم جبر نعيمه</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>98.8%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.8% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>روان اشرف عدنان علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>94.6%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.6% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>روان ماجد حسين رحيم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>90.2%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.2% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>زهراء حبيب علي حسن</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>91.2%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.2% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>شمس مصطفى سامي ياسين</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>90.6%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.6% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>شهد اسعد محمد يعقوب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>89.4%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.4% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>صبا علي عبد المحمد علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>97.2%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.2% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة علاء اسماعيل كاظم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>91%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة محمد عبد الستار علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>89.8%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.8% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة همام علي حسون</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>96%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة جواد رمضان فضل</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>99%</td>
+                                <td></td>
+                                <td>حصلت على معدل 99% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade6" data-achievement="excellence">
+                                <td>ميرال عصام مالك حسين</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2021-2022</td>
+                                <td>97.6%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.6% في السادس الابتدائي</td>
+                            </tr>
+                            <!--2018-2019-->
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>ابراهيم مصطفى كمال عبد الله</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>93.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>حسين حيدر حسين نعمة</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>98.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 98.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>حسين عباس تموز محسن</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>87%</td>
+                                <td></td>
+                                <td>حصل على معدل 87% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>حيدر علي عبد المجيد علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>88%</td>
+                                <td></td>
+                                <td>حصل على معدل 88% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>سجاد عماد ابراهيم احمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>93.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>سجاد فاضل عبد راشد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>97.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 97.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>عباس كاظم جواد كاظم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>86.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 86.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>عبد الهادي فؤاد عبد الهادي مويل</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>89.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>علي جعفر علي حسين</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>94.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 94.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>علي فارس شعبان جايد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>90.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>علي هشام عيسى جابر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>89.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>كرار فرقد احمد عبد الزهرة</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>89.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>مؤمل فارس عودة عبد الكريم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>87.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 87.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد ضياء عبد ربة لفتة</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>92.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 92.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد وائل بسام علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>96.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 96.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>مرتضى محمد سالم جعفر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>91.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 91.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>مصطفى عدي حسين مصطفى</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>90.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>مصطفى علاء اسماعيل كاظم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>88.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.33% في السادس الابتدائي</td>
+                            </tr>
+                            
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>بان ماجد عبد الحي جابر</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>97.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>بدور رعد سعدي عبود</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>88.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>جنة محمود داود سلمان</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>96.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>حوراء احمد عبد عفريت</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>87.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>زينب محمد جبيشة عبيد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>86.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>سكينة غسان طالب عزيز</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>91.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>صديقة كاظم جميل صالح</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>98.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>ضحى فراس سلمان صالح</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>89.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>ضحى نزار جعفر صادق</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>94.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>عذراء محمود شاكر مرزوك</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>88.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة عدي طالب جواد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>91.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>فاطمة مازن غريب دوحي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>92.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>مريم نعمة حميد درويش</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>97.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>ملاك جلال عبد الكريم جبار</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>86.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade6" data-achievement="excellence">
+                                <td>ميلاد عيسى فاضل عداي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2018-2019</td>
+                                <td>90%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90% في السادس الابتدائي</td>
+                            </tr>
+                            <!--2017-2018-->
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>احمد كاظم عبد الزهرة كاظم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>87.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 87.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>احمد الباقر عدي مرتضى علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>90%</td>
+                                <td></td>
+                                <td>حصل على معدل 90% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>ايمن حيدر ناجي عبد الحسن</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>93.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>حسن عواد عبد الرضا لفتة</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>93.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>حسن فلاح عبد الجليل حبيب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>96.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 96.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>علي أياد طعمة سلمان</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>93.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>علي اسعد محمد يعقوب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>87.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 87.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>كرار محمد جواد مويل</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>94.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 94.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>مؤمل علي عبد حسين</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>86.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 86.5% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد رضا سامي نجم عبود</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>86.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 86.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>محمد كريم ابراهيم شهاب احمد</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>91%</td>
+                                <td></td>
+                                <td>حصل على معدل 91% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>جنة محمد عبد الستار علي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>89.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>زكية علاء جعفر حسون</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>96.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.67% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>زهراء عدي عاشور عكش</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>95.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>زينب ميثم سلمان موسى</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>86.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>صفا جاسم محمد جواد كريم</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>86.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.33% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>منار عبد الرزاق حسن عبد النبي</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>98.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.17% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>نرجس وليد شبر غالب</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>97.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.83% في السادس الابتدائي</td>
+                            </tr>
+                            <tr data-year="2018" data-grade="grade6" data-achievement="excellence">
+                                <td>هبة سلوان يوسف عبد الرحمن</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2017-2018</td>
+                                <td>96.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.67% في السادس الابتدائي</td>
+                            </tr>
+                            <!--الثالث المتوسط-->
+                            <!--2023-2024-->
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>عصام نعمة حميد درويش</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>88.57%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.57% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>الاء مزاحم عبد الحسين محمد</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>89%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>حوراء عمار حسين علي</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>87.85%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.85% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>زهراء مسلم كريم ناهي</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>95.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.14% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>زينه حسام ناصر محسن</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>88.71%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.71% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>غدير علي عبد حنتوش</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>96.71%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.71% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>زينب احمد عبد الواحد حيدر</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>92.42%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.42% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>فرح خالد منصور جازع</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>89.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.14% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade9" data-achievement="excellence">
+                                <td>ملاك تحسين علي فرحان</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2023-2024</td>
+                                <td>91.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.14% في الثالث المتوسط</td>
+                            </tr>
+                            <!--2022-2023-->
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>حسين حسن حسين طاهر</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>88%</td>
+                                <td></td>
+                                <td>حصل على معدل 88% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>حسين مصطفى حسين منصور</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>87.85%</td>
+                                <td></td>
+                                <td>حصل على معدل 87.85% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>عبد الله قيس عبد النبي داغر</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>92%</td>
+                                <td></td>
+                                <td>حصل على معدل 92% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>محمد امجد حميد مسلم</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>91.57%</td>
+                                <td></td>
+                                <td>حصل على معدل 91.57% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>احلام غيث محمد عبد الرزاق</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>91.28%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.28% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>روان كاظم احمد حنتوش</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>95.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.14% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>شهد اياد كاظم احمد</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>90.42%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.42% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>طيبة اسعد محمد يعقوب</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>90.42%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.42% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade9" data-achievement="excellence">
+                                <td>هاجر خلف مكي خلف</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2022-2023</td>
+                                <td>96%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96% في الثالث المتوسط</td>
+                            </tr>
+                            <!--2021-2022-->
+                            <tr data-year="2022" data-grade="grade9" data-achievement="excellence">
+                                <td>اسامة حازم عبد النبي لازم</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2021-2022</td>
+                                <td>90.16%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.16% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade9" data-achievement="excellence">
+                                <td>حبيب علاء حبيب سلمان</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2021-2022</td>
+                                <td>91.66%</td>
+                                <td></td>
+                                <td>حصل على معدل 91.66% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade9" data-achievement="excellence">
+                                <td>سحاد عمود ابراهيم احمد</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2021-2022</td>
+                                <td>92%</td>
+                                <td></td>
+                                <td>حصل على معدل 92% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade9" data-achievement="excellence">
+                                <td>عبد الله محمد توفيق حمود</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2021-2022</td>
+                                <td>93.66%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.66% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade9" data-achievement="excellence">
+                                <td>سكينة غسان طالب عزيز</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2021-2022</td>
+                                <td>91.5%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.5% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade9" data-achievement="excellence">
+                                <td>مريم نعمة حميد درويش</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2021-2022</td>
+                                <td>93.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93.83% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade9" data-achievement="excellence">
+                                <td>نبراس خالد علي خلف</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2021-2022</td>
+                                <td>87.16%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.16% في الثالث المتوسط</td>
+                            </tr>
+                            
+                            <!--2020-2021-->
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>حسن عواد عبد الرضا لفتة</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>86%</td>
+                                <td></td>
+                                <td>حصل على معدل 86% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>عباس بدر مجيد جبار</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>88%</td>
+                                <td></td>
+                                <td>حصل على معدل 88% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>عبد العزيز احمد محمود عبد الرزاق</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>93.75%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.75% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>علي جهاد كاظم نوري</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>94%</td>
+                                <td></td>
+                                <td>حصل على معدل 94% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>علي عصام عبد الله حمود</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>87%</td>
+                                <td></td>
+                                <td>حصل على معدل 87% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>علي وسام لفتة عودة</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>88%</td>
+                                <td></td>
+                                <td>حصل على معدل 88% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>محمد رياض درجال خليفة</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>91%</td>
+                                <td></td>
+                                <td>حصل على معدل 91% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>محمد كريم ابراهيم شهاب محمد</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>95.75%</td>
+                                <td></td>
+                                <td>حصل على معدل 95.75% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>مصطفى علي جعفر مسلم</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>96.5%</td>
+                                <td></td>
+                                <td>حصل على معدل 96.5% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>يوسف سلمان عبد الحافظ سلمان</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>91%</td>
+                                <td></td>
+                                <td>حصل على معدل 91% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>رقية مهند عبد الحسين عبود</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>93.25%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93.25% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade9" data-achievement="excellence">
+                                <td>آيات كاظم احمد حنتوش</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2020-2021</td>
+                                <td>93.25%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93.25% في الثالث المتوسط</td>
+                            </tr>
+                            
+                            <!--2018-2019-->
+                            <tr data-year="2019" data-grade="grade9" data-achievement="excellence">
+                                <td>حيدر حسن كامل محسن</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2018-2019</td>
+                                <td>89.37%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.37% في الثالث المتوسط</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade9" data-achievement="excellence">
+                                <td>شهد منذر ابراهيم حميد</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2018-2019</td>
+                                <td>87.75%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.75% في الثالث المتوسط</td>
+                            </tr>
+
+                            <!--السادس الاعدادي-->
+                            <!--2023-2024-->
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>سجاد رعد عبد الصاحب محمد امين</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>91.43%</td>
+                                <td></td>
+                                <td>حصل على معدل 91.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>محمد عبد الكاظم خلف حنش</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>96.29%</td>
+                                <td></td>
+                                <td>حصل على معدل 96.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>محمد كريم ابراهيم شهاب احمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>98.57%</td>
+                                <td></td>
+                                <td>حصل على معدل 98.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>حسن عواد عبد الرضا لفتة</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>95.14%</td>
+                                <td></td>
+                                <td>حصل على معدل 95.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>يوسف مضر قاسم حبيب</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>92%</td>
+                                <td></td>
+                                <td>حصل على معدل 92% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>علي ايمن عبد الوهاب منصور</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>86.14%</td>
+                                <td></td>
+                                <td>حصل على معدل 86.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>آيات كاظم احمد حنتوش</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>92.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>اطياف نعمه جوحي صحن</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>98.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>انوار حسنين حامد معتوك</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>98.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>شهد حسين سامي حسين</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>95.71%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>نبأ محمود ناصح محمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>98.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>هبة حامد عبد العالي رخيص</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>95.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>ودق عماد قادر لفته</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>92.71%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>ابتهال علاء ناظم صالح</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>93.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>اطياف اوسام عبد الرزاق سهر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>92%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>بنين حازم حافظ عناد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>95.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>بنين عبد الله مهدي محسن</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>94%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>جنان حسين حميد حسين</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>95.43%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>رسل احمد جليل فائق جميل</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>96%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>زينب علي عبد الرضا ميدان</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>92.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>سارة رائد عبد اللطيف احمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>96.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>مريم ضياء محمد خضير</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>93%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>كوثر علي جميل فائق جليل</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>96.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>ملاك جميل كاظم ثويني</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>92.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>نبأ محمد مطر مظلوم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>94%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2024" data-grade="grade12" data-achievement="excellence">
+                                <td>هبة محمد مطر مظلوم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2023-2024</td>
+                                <td>95.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.57% في السادس العلمي</td>
+                            </tr>
+                            <!--2022-2023-->
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>حسين ناجي نخش رحيمة</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>88.57%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>علي اسعد عبد الحافظ سالم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>88.86%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>ياسر عمار كاظم محمد جواد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>86.57%</td>
+                                <td></td>
+                                <td>حصل على معدل 86.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>رضا محمد سالم جعفر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>97.57%</td>
+                                <td></td>
+                                <td>حصل على معدل 97.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>سيف علي حسين عساف</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>89.43%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>علي كاظم خزعل مطشر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>90.71%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>محمد مهند مالك جدوع</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>97.14%</td>
+                                <td></td>
+                                <td>حصل على معدل 97.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>منتظر مهند مالط جدوع</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>93.29%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>علي محمد توفيق حمود</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>94.29%</td>
+                                <td></td>
+                                <td>حصل على معدل 94.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>فاطمة مهند امين عبد الرحيم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>94.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>ناجحة مشرق عبد العباس عبد الرسول</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>94.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>حنين ماجد حميد مهدي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>88.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>زهراء رحيم جليل حميد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>90.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>شهد مرتضى صلاح مهدي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>87.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>صفا عقيل سالم جار الله</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>89.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>مريم عدي حنا ميخا</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>88%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>مريم مرتضى عبد الرزاق جاسم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>89.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>ملاك جاسم محمد عبيد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>87.71%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>نبأ طالب كاظم جابر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>92.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>نرجس صالح فاخر فنجان</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>98.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>نور الهدى شامل حسن علي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>92.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>نور الهدى علي حسين محمد احمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>95.71%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>نورة علي عباس ثجيل</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>96.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>نوف قاسم يوسف يعقوب</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>95.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>هيفاء فاضل شمخي جابر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>94.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>ام البنين اسعد عبد السيد خلف</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>90.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>بنين بسام عبد النبي ملوح</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>89.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2023" data-grade="grade12" data-achievement="excellence">
+                                <td>رانية صفاء محمد كرنوص</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2022-2023</td>
+                                <td>89.57%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.57% في السادس العلمي</td>
+                            </tr>
+                            <!--2021-2022-->
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>ايمن احسان مردان</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>98.71%</td>
+                                <td><span style="display: none;" class="achievement-badge badge-gold">المركز الأول على المدرسة</span></td>
+                                <td>حصل على معدل 98.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>كوثر هاني درويش</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>97.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>رقية جعفر جاسم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>94.43%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>حيدر عدي عبد الوهاب</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>93.86%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>زهراء قيس عبد الساده</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>92.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>فاطمة انيس عبد الكاظم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>90.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>عباس فؤاد عبد الهادي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>90.29%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>حيدر محمد رحيم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>90.14%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>شهد جميل قاسم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>90%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>تبارك عبد الكريم جبار</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>89.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>زهراء ميثم تركي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>89.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>فاطمة باسم محمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>88.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>براء حارث صلاح</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>87.43%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>سبأ اسماعيل مطشر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>87.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2022" data-grade="grade12" data-achievement="excellence">
+                                <td>زهراء ميثم تركي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2021-2022</td>
+                                <td>89.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.14% في السادس العلمي</td>
+                            </tr>
+                            <!--2020-2021-->
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>اديان علي احمد عبد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>95.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>تبارك عدنان صبار اراهيم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>98.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.17% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>سرى صدام عليوي مويرد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>93.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93.67% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>فاطمة عبد السلام فيصل عبد الرحمن</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>92.50%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.50% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>ملكة عبد الله موسى احمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>87.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 87.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>هاجر عقيل سالم جار الله</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>91.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.83% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>شمس حسنين عبد الوهاب عبد الزهرة</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>90.17%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.17% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>الاء جميل قاسم سعدون</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>93%</td>
+                                <td></td>
+                                <td>حصلت على معدل 93% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>سنا عدي عبد الحميد طه</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>86.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 86.67% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>المجتبى عبد المحسن صالح ماجد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>93.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 93.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>حسين عباس لفتة عطية</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>97%</td>
+                                <td></td>
+                                <td>حصل على معدل 97% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>حيدر غانم عبد عثمان</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>91.67%</td>
+                                <td></td>
+                                <td>حصل على معدل 91.67% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>محمد هاني عقيل ابراهيم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>88.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 88.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>مرتضى جهاد بدر غضبان</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>95.33%</td>
+                                <td></td>
+                                <td>حصل على معدل 95.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>يونس عقيل عبد محمد عباس</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>91%</td>
+                                <td></td>
+                                <td>حصل على معدل 91% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>عامر مصطفى حسين فالح</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>94%</td>
+                                <td></td>
+                                <td>حصل على معدل 94% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>محمد ناظم علي عبادي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>95.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 95.17% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade12" data-achievement="excellence">
+                                <td>يوسف فاروق فرحان حبيب</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2020-2021</td>
+                                <td>91%</td>
+                                <td></td>
+                                <td>حصل على معدل 91% في السادس العلمي</td>
+                            </tr>
+                            <!--2019-2020-->
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>عبد الرحمن علاء عمر محمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>86.50%</td>
+                                <td></td>
+                                <td>حصل على معدل 86.50% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>مصطفى احمد محمد بدير</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>86.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 86.17% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>حيدر جواد كاظم حسن</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>94.17%</td>
+                                <td></td>
+                                <td>حصل على معدل 94.17% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>علي عباس حمزة عباس</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>91%</td>
+                                <td></td>
+                                <td>حصل على معدل 91% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>محمد جاسم هادود عليوي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>90.83%</td>
+                                <td></td>
+                                <td>حصل على معدل 90.83% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>آية عبد علي شتيل جباره</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>91.50%</td>
+                                <td></td>
+                                <td>حصلت على معدل 91.50% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>آيات صادق جبار غانم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>96%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>ام البنين ناظم علي عبادي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>95.50%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95.50% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>بنين اسعد حميد عبد الله</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>99.67%</td>
+                                <td></td>
+                                <td>حصلت على معدل 99.67% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>بنين حسين جلوب كاظم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>98.50%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.50% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>زهراء قاسم ابراهيم جاسم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>98.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.83% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>زهراء قصي جمهور خضير</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>96.50%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.50% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>زينب عبد الشهيد عبد الكريم مرداو</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>95%</td>
+                                <td></td>
+                                <td>حصلت على معدل 95% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>عذراء مهند سبتي كاظم كاظم</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>98.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td></td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>97.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>فاطمة كريم جبار صكر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>97.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.33% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>مآب عبد الكريم محمد جعفر حسين</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>97.83%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.83% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade12" data-achievement="excellence">
+                                <td>ملاك زهير صالح فرهود</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2019-2020</td>
+                                <td>89.33%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.33% في السادس العلمي</td>
+                            </tr>
+                            <!--2018-2019-->
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>عبد العزيز سالم علوان عبد النبي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>97.71%</td>
+                                <td></td>
+                                <td>حصل على معدل 97.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>عمار موسى علي فرحان</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>89.86%</td>
+                                <td></td>
+                                <td>حصل على معدل 89.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>الاء علي جاسب محمد</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>88.71%</td>
+                                <td></td>
+                                <td>حصلت على معدل 88.71% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>ايات علي عبد حنون</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>90.86%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.86% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>تبارك عبد الكريم جبار حنين</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>94.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>سارة سلام عبد الصاحب طالب</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>94.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 94.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>منار سلطان فاضل علي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>89.43%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>امنية جواد رمضان فضل</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>96.43%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>بنين يوسف راغب عباس</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>98.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 98.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>روان اسعد عجيل عبد القادر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>89.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>سحر ماجد عبد الرحيم عباس</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>89.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 89.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>شهد احمد باجي هبسي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>97.14%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97.14% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>فاطمة اياد عبد الله سبتي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>96.43%</td>
+                                <td></td>
+                                <td>حصلت على معدل 96.43% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>نرجس مصطفى حسين بحر</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>97%</td>
+                                <td></td>
+                                <td>حصلت على معدل 97% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>مريم عمار ناصر معتوق</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>90.29%</td>
+                                <td></td>
+                                <td>حصلت على معدل 90.29% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2019" data-grade="grade12" data-achievement="excellence">
+                                <td>فاطمة عباس كاظم علي</td>
+                                <td>الصف السادس العلمي</td>
+                                <td>2018-2019</td>
+                                <td>92.57%</td>
+                                <td></td>
+                                <td>حصلت على معدل 92.57% في السادس العلمي</td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade6" data-achievement="excellence">
+                                <td>لا يوجد امتحان وزاري بسبب جائحة كورورنا</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2019-2020</td>
+                                <td style="display: none;"></td>
+                                <td style="display: none;"></td>
+                                <td style="display: none;"></td>
+                            </tr>
+                            <tr data-year="2021" data-grade="grade6" data-achievement="excellence">
+                                <td>لا يوجد امتحان وزاري بسبب جائحة كورورنا</td>
+                                <td>الصف السادس الابتدائي</td>
+                                <td>2020-2021</td>
+                                <td style="display: none;"></td>
+                                <td style="display: none;"></td>
+                                <td style="display: none;"></td>
+                            </tr>
+                            <tr data-year="2020" data-grade="grade9" data-achievement="excellence">
+                                <td>لا يوجد امتحان وزاري بسبب جائحة كورورنا</td>
+                                <td>الصف الثالث المتوسط</td>
+                                <td>2019-2020</td>
+                                <td style="display: none;"></td>
+                                <td style="display: none;"></td>
+                                <td style="display: none;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>مدارس المتنبي</h3>
+                    <p>نحو مستقبل تعليمي مشرق</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/16EoFobRef/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/discover/%D9%85%D8%AF%D8%B1%D8%B3%D9%87-%D8%A7%D9%84%D9%85%D8%AA%D9%86%D8%A8%D9%8A-%D8%A7%D9%84%D8%A8%D8%B5%D8%B1%D9%87?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/al_mutanabi_private_school?igsh=c3Y4M3lkMDdjbGFk"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/channel/UCQSU-t-hdxEuzDNXmBHX4aA?si=-InNd_0mJUwLB4-0"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html#home">الرئيسية</a></li>
+                        <li><a href="index.html#about">عن المدرسة</a></li>
+                        <li><a href="index.html#programs">البرامج</a></li>
+                        <li><a href="index.html#admissions">التسجيل</a></li>
+                        <li><a href="achievements.html" class="active">إنجازات طلبتنا</a></li>
+                        <li><a href="about.html">عن المطور</a></li>
+                        <li><a href="index.html#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>راسل المطور</h3>
+                    <p>راسل المطور</p>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="newsletter-form" style="display: flex;
+                    flex-direction: column; gap: 10px;">
+                        <input type="hidden" name="access_key" value="2c1bff1c-b300-40e2-a53e-2f20f710259c">
+                        <input type="email" name="email" placeholder="اكتب بريدك الإلكتروني هنا" required style="text-align: center;">
+                        <input type="text" name="The messege" placeholder="اكتب رسالتك هنا" required style="text-align: center;">
+
+                        <button type="submit" style="max-width: 25%; height: 25px;">إرسال</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 مدارس المتنبي النموذجية الخاصة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+    // فلترة الجدول حسب السنة الأكاديمية
+    document.getElementById('year-filter').addEventListener('change', applyFilters);
+
+    // فلترة متقدمة
+    document.getElementById('grade-filter').addEventListener('change', applyFilters);
+    document.getElementById('achievement-filter').addEventListener('change', applyFilters);
+    document.getElementById('search-input').addEventListener('input', applyFilters);
+
+    function applyFilters() {
+        const selectedYear = document.getElementById('year-filter').value;
+        const selectedGrade = document.getElementById('grade-filter').value;
+        const selectedAchievement = document.getElementById('achievement-filter').value;
+        const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+
+        const rows = document.querySelectorAll('.achievements-table tbody tr');
+
+        rows.forEach(row => {
+            const yearMatch = (selectedYear === 'all' || row.dataset.year === selectedYear);
+            const gradeMatch = (selectedGrade === 'all' || row.dataset.grade === selectedGrade);
+            const achievementMatch = (selectedAchievement === 'all' || row.dataset.achievement === selectedAchievement);
+            const nameMatch = row.children[0]?.textContent.trim().toLowerCase().includes(searchQuery);
+
+            if (yearMatch && gradeMatch && achievementMatch && nameMatch) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // تفعيل/إلغاء القائمة عند النقر على زر الهاتف
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('.nav-links li a');
+
+    mobileMenu.addEventListener('click', function () {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    });
+
+    // إغلاق القائمة عند النقر على أي عنصر
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+    });
+
+    // توسيع/طي الأسئلة الشائعة
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('i');
+
+            answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            icon.classList.toggle('fa-chevron-down');
+            icon.classList.toggle('fa-chevron-up');
+        });
+    });
+</script>
+</body>
+</html>
