@@ -1,2 +1,2 @@
 # Al-Mutanabi
-A website for Al-Mutanavi Private School 
+A website for Al-Mutanabi Private School 
