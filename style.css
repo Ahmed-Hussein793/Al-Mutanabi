@@ -208,7 +208,7 @@ header {
   animation: fadeInUp 1s ease;
 }
 
-.slide-content h1 {
+.slide-content h2 {
   color: var(--white);
   font-size: 2.5rem;
   margin-bottom: 15px;
