@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap",
+      "permanent": true
+    }
+  ]
+}
