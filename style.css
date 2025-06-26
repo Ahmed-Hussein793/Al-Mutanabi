@@ -28,7 +28,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
-  
 }
 
 .section {
@@ -295,19 +294,6 @@ header {
   flex: 1;
 }
 
-.about-image {
-  flex: 1;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.about-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .features-list li {
   margin-bottom: 10px;
   position: relative;
@@ -325,10 +311,6 @@ header {
 @media (max-width: 992px) {
   .about-content {
       flex-direction: column;
-  }
-  
-  .about-image {
-      order: -1;
   }
 }
 
@@ -350,9 +332,7 @@ header {
   .program-card {
     width: 100%;
     max-width: 500px;
-    
   }
-  
 }
 
 .program-card {
@@ -390,22 +370,6 @@ header {
   color: var(--primary-color);
 }
 
-.program-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: var(--secondary-color);
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.program-link:hover {
-  color: var(--primary-color);
-}
-
-.program-link i {
-  margin-right: 5px;
-}
-
 /* قسم القبول والتسجيل */
 .admission-content {
   display: flex;
@@ -414,10 +378,6 @@ header {
 }
 
 .admission-info {
-  flex: 1;
-}
-
-.admission-form {
   flex: 1;
 }
 
@@ -451,10 +411,6 @@ header {
   margin-top: 30px;
 }
 
-.download-section h4 {
-  margin-bottom: 15px;
-}
-
 .download-btn {
   display: inline-flex;
   align-items: center;
@@ -473,110 +429,6 @@ header {
 
 .download-btn i {
   margin-left: 8px;
-}
-
-/* النماذج */
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 500;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: 'Tajawal', sans-serif;
-  transition: var(--transition);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--secondary-color);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.2);
-}
-
-.form-group textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-  border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  font-family: 'Tajawal', sans-serif;
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-  min-width: 120px;
-}
-
-.btn-primary:hover {
-  background-color: #1a252f;
-}
-
-.btn-text {
-  display: inline-block;
-  transition: var(--transition);
-}
-
-.btn-loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  border-top-color: var(--white);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-  display: none;
-}
-
-@keyframes spin {
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-/* رسالة النموذج */
-#form-response {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 4px;
-  display: none;
-}
-
-.success-message {
-  background-color: #d4edda;
-  color: #155724;
-  display: flex;
-  align-items: center;
-}
-
-.error-message {
-  background-color: #f8d7da;
-  color: #721c24;
-  display: flex;
-  align-items: center;
-}
-
-#form-response i {
-  margin-left: 10px;
-  font-size: 1.2rem;
 }
 
 /* قسم اتصل بنا */
@@ -775,33 +627,7 @@ footer {
       grid-template-columns: 1fr;
   }
 }
-.video-background {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* أو أي ارتفاع تريده */
-  overflow: hidden;
-}
 
-.video-background video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  z-index: 0;
-  object-fit: cover;
-}
-
-.video-background .content {
-  position: relative;
-  z-index: 1;
-  color: white; /* لون النص حتى يظهر فوق الفيديو */
-  text-align: center;
-  padding: 2rem;
-}
 /* تنسيقات جديدة للبديل المتنقل */
 .mobile-hero {
   display: none;
@@ -873,13 +699,14 @@ footer {
   
   .mobile-hero-card {
     height: 250px;
-    }
   }
-  .newsletter-form input{
-    max-width: 353.333px;
+}
 
-  }
-  .visually-hidden {
+.newsletter-form input {
+  max-width: 353.333px;
+}
+
+.visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;

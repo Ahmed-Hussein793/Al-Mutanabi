@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنجازات طلابنا | مدارس المتنبي</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../images/Logo.png" type="image/x-icon">
+    <meta name="description" content="نتائج الصفوف المنتهية في مدارس المتنبي الأهلية النموذجية - السادس الابتدائي، الثالث المتوسط، والسادس الإعدادي. عرض تفصيلي للمعدلات والإنجازات العلمية للسنوات الدراسية المختلفة.">
+    <meta name="keywords" content="
+        نتائج طلاب المتنبي,
+        نتائج السادس العلمي المتنبي,
+        نتائج الثالث المتوسط المتنبي,
+        نتائج السادس الابتدائي المتنبي,
+        معدلات الطلاب,
+        نتائج الامتحانات مدارس المتنبي,
+        طلاب المتنبي المتفوقين,
+        النتائج الدراسية المتنبي,
+        موقع نتائج المتنبي,
+        نتائج الامتحانات 2024,
+        نتائج المتفوقين في المتنبي,
+        مدارس المتنبي نتائج,
+        student results Almutanabbi,
+        Almutanabbi school grades,
+        Almutanabbi excellence list,
+        academic results Basra,
+        top students Iraq,
+        best grades Mutanabbi,
+        exam results Mutanabbi,
+        Mutanabbi school achievements,
+        Mutanabbi honor board,
+        نتائج المتنبي الأهلية 2024,
+        إنجازات طلاب المتنبي
+    ">
+    <style>
+        
+        
+
+        /* عند عرض الصفحة على شاشة أصغر من 768px */
+
+        .achievements-header {
+            background: linear-gradient(rgba(0, 64, 128, 0.8), rgba(0, 64, 128, 0.8)), url('images/achievements-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .achievements-filter {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-group select, .filter-group input {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-width: 200px;
+        }
+        
+        .achievements-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .achievements-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: right;
+        }
+        
+        .achievements-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .achievements-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .achievements-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .achievement-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .badge-gold {
+            background-color: #FFD700;
+            color: #8B7500;
+        }
+        
+        .badge-silver {
+            background-color: #C0C0C0;
+            color: #696969;
+        }
+        
+        .badge-bronze {
+            background-color: #CD7F32;
+            color: #5D3A1A;
+        }
+        
+        .badge-honor {
+            background-color: #2E8B57;
+            color: white;
+        }
+        
+        .academic-year-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .year-tab {
+            padding: 10px 20px;
+            background-color: #eee;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .year-tab.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .achievement-cards {
+            display: none;
+        }
+        
+        @media (max-width: 1099px) {
+            .academic-year-tabs{
+                display: block;
+                
+            }
+            .academic-year-tabs div {
+                display: flex;
+                justify-content: center;
+            }
+            body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+          }
+      
+          thead {
+            display: none;
+          }
+      
+          tbody tr {
+            display: block;
+            margin: 10px 0;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 15px;
+          }
+      
+          tbody td {
+            display: block;
+            text-align: right;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+          }
+      
+          tbody td:last-child {
+            border-bottom: none;
+          }
+        }   
+        
+        
+       
+
+    </style>
+</head>
+<body>
+    <!-- Main menu -->
+    
+    
+    <header>
+        <nav class="navbar">
+            <div class="logo">مدارس المتنبي</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html#home">الرئيسية</a></li>
+                <li><a href="index.html#about">عن المدرسة</a></li>
+                <li><a href="index.html#programs">برامجنا</a></li>
+                <li><a href="index.html#admissions">القبول والتسجيل</a></li>
+                <li><a href="achievements.html" class="active">إنجازات طلبتنا</a></li>
+                <li><a href="about.html">عن المطور</a></li>
+                <li><a href="index.html#contact">اتصل بنا</a></li>
+            </ul>
+            <div class="toggle-btn" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- محتوى صفحة الإنجازات -->
+    <main>
+        <section class="achievements-header">
+            <div class="container">
+                <h1>إنجازات طلبتنا</h1>
+                <p>تفوق طلابنا هو شعارنا وهدفنا</p>
+            </div>
+        </section>
+        <section class="achievements-section">
+            <div class="container">
+                <div class="achievements-filter">
+                    
+                    <div class="filter-group">
+                        <select id="year-filter">
+                            <option value="all">جميع السنوات</option>
+                            <option value="2025">2024-2025</option>
+                            <option value="2024">2023-2024</option>
+                            <option value="2023">2022-2023</option>
+                            <option value="2022">2021-2022</option>
+                            <option value="2021">2020-2021</option>
+                            <option value="2020">2019-2020</option>
+                            <option value="2019">2018-2019</option>
+                            <option value="2018">2017-2018</option>
+                        </select>
+                        <select id="grade-filter">
+                            <option value="all">جميع الصفوف</option>
+                            <option value="grade12">الصف السادس العلمي</option>
+                            <option value="grade9">الصف الثالث المتوسط</option>
+                            <option value="grade6">الصف السادس الابتدائي</option>
+                        </select>
+                        
+                        <select id="achievement-filter">
+                            <option value="all">جميع الإنجازات</option>
+                            <option value="excellence">تميز علمي</option>
+                            <option value="olympiad">أولمبياد علمي</option>
+                            <option value="sports">إنجازات رياضية</option>
+                            <option value="arts">إنجازات فنية</option>
+                        </select>
+                        
+                        <input type="text" id="search-input" placeholder="ابحث عن طالب...">
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="achievements-table">
+                        <thead>
+                            <tr>
+                                <th>اسم الطالب</th>
+                                <th>الصف</th>
+                                <th>السنة الأكاديمية</th>
+                                <th>المعدل</th>
+                                <th colspan="2">الإنجاز</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>مدارس المتنبي</h3>
+                    <p>نحو مستقبل تعليمي مشرق</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/16EoFobRef/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.tiktok.com/discover/%D9%85%D8%AF%D8%B1%D8%B3%D9%87-%D8%A7%D9%84%D9%85%D8%AA%D9%86%D8%A8%D9%8A-%D8%A7%D9%84%D8%A8%D8%B5%D8%B1%D9%87?is_from_webapp=1&sender_device=pc"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/al_mutanabi_private_school?igsh=c3Y4M3lkMDdjbGFk"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtube.com/channel/UCQSU-t-hdxEuzDNXmBHX4aA?si=-InNd_0mJUwLB4-0"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>روابط سريعة</h3>
+                    <ul>
+                        <li><a href="index.html#home">الرئيسية</a></li>
+                        <li><a href="index.html#about">عن المدرسة</a></li>
+                        <li><a href="index.html#programs">البرامج</a></li>
+                        <li><a href="index.html#admissions">التسجيل</a></li>
+                        <li><a href="achievements.html" class="active">إنجازات طلبتنا</a></li>
+                        <li><a href="about.html">عن المطور</a></li>
+                        <li><a href="index.html#contact">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>راسل المطور</h3>
+                    <p>راسل المطور</p>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="newsletter-form" style="display: flex;
+                    flex-direction: column; gap: 10px;">
+                        <input type="hidden" name="access_key" value="2c1bff1c-b300-40e2-a53e-2f20f710259c">
+                        <input type="email" name="email" placeholder="اكتب بريدك الإلكتروني هنا" required style="text-align: center;">
+                        <input type="text" name="The messege" placeholder="اكتب رسالتك هنا" required style="text-align: center;">
+
+                        <button type="submit" style="max-width: 25%; height: 25px;">إرسال</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 مدارس المتنبي النموذجية الخاصة. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+<script>
+  function getDB() {
+    if (!localStorage.getItem("data")) {
+      fetch("../Documents/DB.json")
+        .then(response => response.json())
+        .then(data => {
+          localStorage.setItem("data", JSON.stringify(data));
+          populateTable();
+        });
+    } else {
+      populateTable(); 
+    }
+  }
+
+  getDB();
+
+  function populateTable() {
+    const resultsTable = JSON.parse(localStorage.getItem("data"));
+    const tbody = document.querySelector("tbody");
+    tbody.innerHTML = ""; // Clear previous rows if any
+
+    if (!Array.isArray(resultsTable)) return;
+
+    const trows = resultsTable.map((tr) => {
+      const row = document.createElement("tr");
+      row.dataset.year = tr["السنة الأكاديمية"].split("-")[1];
+
+      let gradeValue = "";
+      if (tr["الصف"] === "الصف السادس الابتدائي") {
+        gradeValue = "grade6";
+      } else if (tr["الصف"] === "الصف الثالث المتوسط") {
+        gradeValue = "grade9";
+      } else if (tr["الصف"] === "الصف السادس العلمي") {
+        gradeValue = "grade12";
+      }
+
+      row.dataset.grade = gradeValue;
+      row.dataset.achievement = "excellence";
+
+      row.innerHTML = `
+        <td>${tr["اسم الطالب"]}</td>
+        <td>${tr["الصف"]}</td>
+        <td>${tr["السنة الأكاديمية"]}</td>
+        <td>${tr["المعدل"]}</td>
+        <td colspan="2">${tr["الإنجاز"]}</td>
+      `;
+      return row;
+    });
+
+    for (let i = 0; i < trows.length; i++) {
+      tbody.appendChild(trows[i]);
+    }
+  }
+</script>
+
+<script>
+        
+    // Filter the table by academic year
+    document.getElementById('year-filter').addEventListener('change', applyFilters);
+
+    // Advanced filtering
+    document.getElementById('grade-filter').addEventListener('change', applyFilters);
+    document.getElementById('achievement-filter').addEventListener('change', applyFilters);
+    document.getElementById('search-input').addEventListener('input', applyFilters);
+
+    function applyFilters() {
+        const selectedYear = document.getElementById('year-filter').value;
+        const selectedGrade = document.getElementById('grade-filter').value;
+        const selectedAchievement = document.getElementById('achievement-filter').value;
+        const searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
+
+        const rows = document.querySelectorAll('.achievements-table tbody tr');
+
+        rows.forEach(row => {
+            const yearMatch = (selectedYear === 'all' || row.dataset.year === selectedYear);
+            const gradeMatch = (selectedGrade === 'all' || row.dataset.grade === selectedGrade);
+            const achievementMatch = (selectedAchievement === 'all' || row.dataset.achievement === selectedAchievement);
+            const nameMatch = row.children[0]?.textContent.trim().toLowerCase().includes(searchQuery);
+
+            if (yearMatch && gradeMatch && achievementMatch && nameMatch) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // Activate/disable the menu when clicking the phone button
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+    const navItems = document.querySelectorAll('.nav-links li a');
+
+    mobileMenu.addEventListener('click', function () {
+        this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+    });
+
+    // Close the menu when clicking on any item
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        });
+    });
+
+</script>
+</body>
+</html>

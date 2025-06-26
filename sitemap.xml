@@ -13,17 +13,22 @@
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://al-mutanabi.vercel.app/achievements.html</loc>
+  <loc>https://al-mutanabi.vercel.app/achievements/</loc>
   <lastmod>2025-05-14T14:07:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://al-mutanabi.vercel.app/about.html</loc>
+  <loc>https://al-mutanabi.vercel.app/about/</loc>
   <lastmod>2025-05-14T14:07:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://al-mutanabi.vercel.app/Documents/Required_documents.pdf</loc>
+  <lastmod>2025-05-14T14:07:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://al-mutanabi.vercel.app/Documents/DB.json</loc>
   <lastmod>2025-05-14T14:07:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
