@@ -329,6 +329,37 @@
 
     
 <script>
+  // Manage localStorage and refresh every 24 hours
+  (function manageLocalStorage() {
+    const keyName = "lastRefresh";
+    const now = Date.now();
+    const storedTime = localStorage.getItem(keyName);
+
+    if (storedTime) {
+      const hoursPassed = (now - parseInt(storedTime)) / (1000 * 60 * 60);
+
+      if (hoursPassed >= 24) {
+        // Remove only specific keys instead of clearing all localStorage
+        const keysToKeep = ["lastRefresh"];
+        Object.keys(localStorage).forEach(key => {
+          if (!keysToKeep.includes(key)) {
+            localStorage.removeItem(key);
+          }
+        });
+
+        // Update timestamp
+        localStorage.setItem(keyName, now.toString());
+        console.log("localStorage refreshed after 24 hours.");
+      } else {
+        console.log(`Next refresh in ${(24 - hoursPassed).toFixed(2)} hours.`);
+      }
+    } else {
+      localStorage.setItem(keyName, now.toString());
+      console.log("Initial localStorage timestamp set.");
+    }
+  })();
+
+  // Load DB if not already stored
   function getDB() {
     if (!localStorage.getItem("data")) {
       fetch("../Documents/DB.json")
@@ -338,20 +369,19 @@
           populateTable();
         });
     } else {
-      populateTable(); 
+      populateTable();
     }
   }
 
-  getDB();
-
+  // Fill table with data from localStorage
   function populateTable() {
     const resultsTable = JSON.parse(localStorage.getItem("data"));
     const tbody = document.querySelector("tbody");
-    tbody.innerHTML = ""; // Clear previous rows if any
+    tbody.innerHTML = "";
 
     if (!Array.isArray(resultsTable)) return;
 
-    const trows = resultsTable.map((tr) => {
+    resultsTable.forEach(tr => {
       const row = document.createElement("tr");
       row.dataset.year = tr["السنة الأكاديمية"].split("-")[1];
 
@@ -374,14 +404,14 @@
         <td>${tr["المعدل"]}</td>
         <td colspan="2">${tr["الإنجاز"]}</td>
       `;
-      return row;
+      tbody.appendChild(row);
     });
-
-    for (let i = 0; i < trows.length; i++) {
-      tbody.appendChild(trows[i]);
-    }
   }
+
+  // Initialize data load
+  getDB();
 </script>
+
 
 <script>
         
